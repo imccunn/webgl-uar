@@ -37,9 +37,15 @@
     scene.add( cube1 );
     scene.add( cube2 );
     
-    var light = new THREE.AmbientLight(0x404040);
-    scene.add(light);
+     var light = new THREE.AmbientLight(0x404040);
+     scene.add(light);
 
+    var planeGeo = new THREE.PlaneBufferGeometry(20, 20, 32);
+    var planeMat = new THREE.MeshBasicMaterial({color: 0x222211, side: THREE.DoubleSide});
+    var plane = new THREE.Mesh(planeGeo, planeMat);
+    scene.add(plane);
+    plane.position.z = -2;
+    plane.rotation.x = 5;
     camera.position.z = 10;
 
     function render() {
